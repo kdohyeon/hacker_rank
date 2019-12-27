@@ -18,8 +18,8 @@ public class SolverController {
     @Autowired
     private SolverService solverService;
 
-    @GetMapping("/run")
-    public ApiResponse<List<String>> run() {
+    @GetMapping("/solve")
+    public ApiResponse<List<String>> solveProblems() {
 
         try {
             return ApiResponse.success(solverService.solve());

@@ -2,6 +2,8 @@ package com.interview.hackerrank.solver;
 
 import static com.interview.hackerrank.utils.AppConstants.DEFAULT_PACKAGE_PATH;
 import static com.interview.hackerrank.utils.AppConstants.FAILURE;
+import static com.interview.hackerrank.utils.AppConstants.SAMPLE_INPUT_PATH;
+import static com.interview.hackerrank.utils.AppConstants.SAMPLE_OUTPUT_PATH;
 import static com.interview.hackerrank.utils.AppConstants.SUCCESS;
 import static com.interview.hackerrank.utils.AppConstants.USER_DIR;
 
@@ -17,14 +19,15 @@ import java.util.List;
 public interface ProblemSolver<T> extends Problem {
     default String process() throws IOException {
         // read
-        File inputFile = new File(System.getProperty(USER_DIR) + DEFAULT_PACKAGE_PATH + getPackagePath() + "/sample_input");
-        File outputFile = new File(System.getProperty(USER_DIR) + DEFAULT_PACKAGE_PATH + getPackagePath() + "/sample_output");
+        File inputFile = new File(System.getProperty(USER_DIR) + DEFAULT_PACKAGE_PATH + getPackagePath() + SAMPLE_INPUT_PATH);
+        File outputFile = new File(System.getProperty(USER_DIR) + DEFAULT_PACKAGE_PATH + getPackagePath() + SAMPLE_OUTPUT_PATH);
+        List output = readFile(outputFile);
 
         // process
         List result = solveProblem(inputFile);
-        List output = readFile(outputFile);
 
         // compare
+        // TODO: make the comparison part to be multiple comparison
         return getResponseMessage(isCorrect(result, output));
     }
 
