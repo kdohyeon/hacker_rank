@@ -1,10 +1,14 @@
 package com.interview.hackerrank.solver;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.util.List;
+
 /**
  * @author: kdohyeon
  * @date: 2019-12-27
  **/
-public interface Problem {
+public interface Problem<T> {
     /**
      * 해당 문제를 풀지 안풀지에 대한 여부를 확인합니다.
      * */
@@ -25,8 +29,7 @@ public interface Problem {
      * */
     String getProblemLink();
 
-    /**
-     * 문제를 풉니다.
-     * */
-    boolean process();
+    String getPackagePath();
+
+    boolean process() throws IOException;
 }
