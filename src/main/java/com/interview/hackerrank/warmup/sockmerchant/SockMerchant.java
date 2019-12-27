@@ -1,16 +1,9 @@
 package com.interview.hackerrank.warmup.sockmerchant;
 
-import static com.interview.hackerrank.utils.AppConstants.DEFAULT_PACKAGE_PATH;
-
 import com.google.common.collect.Lists;
-import com.interview.hackerrank.solver.Problem;
 import com.interview.hackerrank.solver.ProblemSolver;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import org.springframework.stereotype.Component;

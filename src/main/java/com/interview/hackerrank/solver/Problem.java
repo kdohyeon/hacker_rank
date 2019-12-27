@@ -1,8 +1,6 @@
 package com.interview.hackerrank.solver;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * @author: kdohyeon
@@ -31,5 +29,5 @@ public interface Problem<T> {
 
     String getPackagePath();
 
-    boolean process() throws IOException;
+    String process() throws IOException;
 }
