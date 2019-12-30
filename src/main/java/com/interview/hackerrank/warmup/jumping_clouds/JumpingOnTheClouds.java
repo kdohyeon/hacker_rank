@@ -85,19 +85,40 @@ public class JumpingOnTheClouds implements ProblemSolver {
 
     private int jumpingOnClouds(int[] c) {
         int jumps = 0;
+        int currStep = 0;
 
-        for (int i = 0; i < c.length; ) {
-            if (i+2 == c.length) {
-                break;
+        for (int i = 0; i < c.length; i++) {
+            if (i != currStep) {
+                continue;
             }
 
-            if (c[i+2] == 0) { // jump 2 steps
-                i += 2;
-            } else { // if not possible, jump 1 steps
-                i += 1;
+            if (isEligibleForTwoStep(c, i)) {
+                currStep += 2;
+                jumps++;
             }
-            jumps++;
+
+            if (isEligibleForOneStep(c, i)) {
+                currStep += 1;
+                jumps++;
+            }
         }
+
         return jumps;
+    }
+
+    private boolean isEligibleForTwoStep(int[] c, int currStep) {
+        if (currStep + 2 < c.length) {
+            return c[currStep + 2] == 0;
+        }
+        return false;
+    }
+
+    private boolean isEligibleForOneStep(int[] c, int currStep) {
+        if (!isEligibleForTwoStep(c, currStep)) {
+            if (currStep + 1 < c.length) {
+                return c[currStep + 1] == 0;
+            }
+        }
+        return false;
     }
 }
