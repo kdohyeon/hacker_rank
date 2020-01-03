@@ -1,4 +1,4 @@
-package com.interview.hackerrank.warmup.jumping_clouds;
+package com.interview.hackerrank.problems.warmup.jumping_clouds;
 
 import com.google.common.collect.Lists;
 import com.interview.hackerrank.solver.ProblemSolver;
@@ -36,7 +36,7 @@ public class JumpingOnTheClouds implements ProblemSolver {
 
     @Override
     public String getPackagePath() {
-        return "/warmup/jumping_clouds";
+        return "/problems/warmup/jumping_clouds";
     }
 
     @Override

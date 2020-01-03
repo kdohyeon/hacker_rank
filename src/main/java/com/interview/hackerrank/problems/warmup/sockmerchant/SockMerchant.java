@@ -1,4 +1,4 @@
-package com.interview.hackerrank.warmup.sockmerchant;
+package com.interview.hackerrank.problems.warmup.sockmerchant;
 
 import com.google.common.collect.Lists;
 import com.interview.hackerrank.solver.ProblemSolver;
@@ -36,7 +36,7 @@ public class SockMerchant implements ProblemSolver {
 
     @Override
     public String getPackagePath() {
-        return "/warmup/sockmerchant";
+        return "/problems/warmup/sockmerchant";
     }
 
     @Override
